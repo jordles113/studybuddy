@@ -1,0 +1,8 @@
+<h1 class="display-4 text-center">All Flashcards:</h1>
+
+<ul class="list-unstyled text-center"><% @flashcards.each do |f| %> </ul>
+<li class= "text-capitalize text-center" > <%= link_to f.name, flashcard_path(f) %></li>
+
+<% end %> 
+
+<div class="text-italic text-center"><%=link_to "Create a Flashcard", new_flashcard_path(@flashcard) %> </div>

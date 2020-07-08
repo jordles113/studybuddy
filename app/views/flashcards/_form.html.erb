@@ -1,0 +1,9 @@
+<p class="text-center"><%= form_for(@flashcard) do |f| %> </p>
+<div class="text-weight-bold text-center"><%= f.label :name %></div>
+<div class="text-weight-bold text-center"><%= f.text_field :name %></div>   
+<div class="text-weight-bold text-center"><%= f.label :definition %> </div>
+<div class="text-weight-bold text-center"><%= f.text_area :definition %> </div>
+<div class="text-weight-bold text-center"><%= f.submit %> </div>    
+
+
+<% end %>
