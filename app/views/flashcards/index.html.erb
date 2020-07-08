@@ -1,7 +1,7 @@
 <h1 class="display-4 text-center">All Flashcards:</h1>
 
-<ul class="list-unstyled text-center"><% @flashcards.each do |f| %> </ul>
-<li class= "text-capitalize text-center" > <%= link_to f.name, flashcard_path(f) %></li>
+<ul><% @flashcards.each do |f| %> </ul>
+<li class= "list-unstyled text-capitalize text-center" > <%= link_to f.name, flashcard_path(f) %></li>
 
 <% end %> 
 
