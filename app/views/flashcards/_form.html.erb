@@ -1,3 +1,19 @@
+<% if @flashcard.errors.any? %>
+  <div id="error_explanation ">
+    <h2 class="text-center text-danger">
+      <%= pluralize(@flashcard.errors.count, "error") %>
+      prohibited this flashcard from being saved:
+    </h2>
+ 
+    <ul>
+    <% @flashcard.errors.full_messages.each do |msg| %>
+      <li class= "h4 list-unstyled text-center text-danger"><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <p class="text-center"><%= form_for(@flashcard) do |f| %> </p>
 <div class="text-weight-bold text-center"><%= f.label :name %></div>
 <div class="text-weight-bold text-center"><%= f.text_field :name %></div>   

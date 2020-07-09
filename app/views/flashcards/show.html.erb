@@ -1,9 +1,8 @@
-<h1 class="display-4 text-center"><%= @flashcard.name %> </h1><br>    
+<h1 class="display-4 text-capitalize text-center"><%= @flashcard.name %> </h1><br>    
 
 <p class="text-monospace text-center"> <%= @flashcard.definition %></p>
 
 <div class="text-weight-bold text-center"> <%= link_to "Update Flashcard", edit_flashcard_path(@flashcard) %></div><br>
 <div class="row justify-content-center"><%= button_to 'Delete Flashcard', @flashcard, method: :delete%></div>   
 
-<div class="text-italic text-center"> <%= link_to "Go Back to All Flashcards", flashcards_path %></div>
 
