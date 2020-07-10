@@ -2,6 +2,7 @@
 
 <p class="text-monospace text-center font-weight-bold"> <%= @flashcard.definition %></p>
 
+<h4 class="text-monospace text-center font-weight-bold">Deck: <%= link_to @flashcard.deck.name, deck_path(@flashcard.deck) if @flashcard.deck %></h4>
 <div class="text-weight-bold text-center text-primary font-weight-bold pt-3"> <%= link_to "Update Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-outline-info" %></div><br>
 <div class="row justify-content-center"><%= button_to 'Delete Flashcard', @flashcard, method: :delete, class: "btn btn-outline-danger"%></div>   
 

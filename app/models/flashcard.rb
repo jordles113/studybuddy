@@ -1,5 +1,5 @@
 class Flashcard < ApplicationRecord
-    belongs_to :decks
+    belongs_to :deck
     validates :name, presence: true
     validates :definition, presence: true 
 
@@ -8,10 +8,10 @@ class Flashcard < ApplicationRecord
     end 
 
     def deck_name=(name)
-        self.decks = Deck.find_by(name: name)
+        self.deck = Deck.find_by(name: name)
     end
     
     def deck_name
-        self.decks ? self.decks.name : nil
+        self.deck ? self.deck.name : nil
     end
 end

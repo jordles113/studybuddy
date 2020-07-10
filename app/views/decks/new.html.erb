@@ -1,5 +1,19 @@
-
 <h1 class="display-3 text-center bg-info text-light pt-3"> New Deck:</h1>
+
+<% if @deck.errors.any? %>
+  <div id="error_explanation ">
+    <h2 class="text-center text-danger">
+      <%= pluralize(@deck.errors.count, "error") %>
+      prohibited this deck from being saved:
+    </h2>
+ 
+    <ul>
+    <% @deck.errors.full_messages.each do |msg| %>
+      <li class= "h4 list-unstyled text-center text-danger"><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 <p class="text-center"><%= form_for(@deck) do |f| %> </p>

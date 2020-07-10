@@ -3,20 +3,24 @@ class DecksController < ApplicationController
     def index
         @decks = Deck.all 
     end 
+    
+    def show
+    end
 
     def new
         @deck = Deck.new
-    end 
-
+    end
+    
     def create
         @deck = Deck.new(deck_params)
-        @deck.save 
-        redirect_to decks_path
-    end 
+        if @deck.save 
+            redirect_to deck_path(@deck)
+        else  
+            render :new
+        end 
+    end
 
-    def show 
-        @deck_cards = @deck.flashcards
-    end 
+    
 
     private 
     
@@ -25,7 +29,7 @@ class DecksController < ApplicationController
     end
 
     def deck_params
-        params.require(:deck).permit(:name, :user_id)
+        params.require(:deck).permit(:name)
     end 
 end
 
