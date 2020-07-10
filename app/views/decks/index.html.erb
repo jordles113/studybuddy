@@ -1,0 +1,12 @@
+<h1 class="pt-3 display-4 text-center bg-info text-light">All Decks:</h1>
+
+<ul><% @decks.each do |f| %> </ul>
+<li class= "list-unstyled text-capitalize text-center pb-1" > <%=link_to f.name, deck_path(f), class: 'text-info' %></li>
+
+
+
+
+<% end %> 
+
+
+<button class="  btn btn-outline-info font-weight-bold "><%=link_to "Create a Deck", new_deck_path(@deck), class: "text-info" %> </button>

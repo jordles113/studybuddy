@@ -1,7 +1,14 @@
-<div class="text-italic text-center py-3"><%=link_to "Create a Flashcard", new_flashcard_path(@flashcard), class: 'btn btn-outline-info font-weight-bold' %> </div>
 
 
-<div class="text-italic text-center"> <%= link_to "Go Back to All Flashcards", flashcards_path, class: 'btn btn-outline-info font-weight-bold'%></div>
+<div class='wrapper text-center mt-5'>
+    <div class= "btn-group">
+        <button class="  btn btn-outline-info font-weight-bold "><%=link_to "Create a Flashcard", new_flashcard_path(@flashcard), class: "text-info" %> </button>
 
 
-<h5><%= link_to "Home", root_path, class: "btn btn-outline-info font-weight-bold float-left p-1"%></h5>
+        <button class="  btn btn-outline-info font-weight-bold "> <%= link_to "Go Back to All Flashcards", flashcards_path, class: 'text-info'%></button>
+
+
+        <button class=" btn btn-outline-info font-weight-bold" ><%= link_to "Home", root_path, class: 'text-info'%></button>
+
+    </div>
+</div>

@@ -1,0 +1,13 @@
+
+<h1 class="display-3 text-center bg-info text-light pt-3"> New Deck:</h1>
+
+
+<p class="text-center"><%= form_for(@deck) do |f| %> </p>
+<div class="text-weight-bold text-center text-info"><%= f.label :name %></div>
+<div class="text-weight-bold text-center"><%= f.text_field :name %></div>   
+<div class="text-weight-bold text-center"><%= f.submit value="Submit", class: 'btn btn-outline-info' %> </div>   
+
+
+
+<% end %>
+
