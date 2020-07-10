@@ -2,7 +2,7 @@ class FlashcardsController < ApplicationController
     before_action :set_flashcard, only: [:show, :edit, :update, :destroy]
 
     def index 
-        @flashcards = Flashcard.all 
+        @flashcards = Flashcard.search(params[:search])
     end 
 
     def new 
@@ -48,6 +48,6 @@ class FlashcardsController < ApplicationController
     end 
 
     def flashcard_params
-        params.require(:flashcard).permit(:name, :definition)
+        params.require(:flashcard).permit(:name, :definition, :search)
     end 
 end
