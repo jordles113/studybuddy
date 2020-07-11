@@ -1,7 +1,9 @@
 class DecksController < ApplicationController
     before_action :set_decks, only: [:show, :edit, :update, :destroy]
+    
     def index
-        @decks = Deck.all 
+        @decks = Deck.all
+        
     end 
     
     def show
@@ -13,12 +15,31 @@ class DecksController < ApplicationController
     
     def create
         @deck = Deck.new(deck_params)
-        if @deck.save 
+        if @deck.valid? 
+            @deck.save 
             redirect_to deck_path(@deck)
         else  
             render :new
         end 
     end
+
+    def edit
+    end 
+
+    def update
+        @deck.update(deck_params)
+        if @deck.valid? 
+            @deck.save
+            redirect_to deck_path(@deck)
+        else  
+            render :edit
+        end 
+    end 
+
+    def destroy
+        @deck.destroy
+        redirect_to decks_path
+    end 
 
     
 
@@ -29,7 +50,7 @@ class DecksController < ApplicationController
     end
 
     def deck_params
-        params.require(:deck).permit(:name)
+        params.require(:deck).permit(:name, :public_deck)
     end 
 end
 

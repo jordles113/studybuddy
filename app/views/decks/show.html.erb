@@ -1,7 +1,8 @@
 <h1 class="display-4 text-capitalize text-center bg-info text-white pt-3 border border-primary"><%= @deck.name %> </h1>
+<h3 class="text-capitalize text-center text-info"> Public Deck: <%= @deck.public_deck %> </h3>
 
 
-<% @deck.flashcards.each do |f|%>
+<% @deck.flashcards.all.sort {|a, b| a.name <=> b.name}.each do |f|%>
 <li class= "list-unstyled text-capitalize text-center pb-1" > <%= link_to f.name, flashcard_path(f), class: 'text-info' %></li>
 <% end %>
 

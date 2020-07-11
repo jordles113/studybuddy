@@ -8,7 +8,7 @@
 
   
 
-<ul><% @flashcards.each do |f| %> </ul>
+<ul><% @flashcards.all.sort {|a, b| a.name <=> b.name}.each do |f| %> </ul>
 <li class= "list-unstyled text-capitalize text-center pb-1" > <%=link_to f.name, flashcard_path(f), class: 'text-info' %></li>
 
 <% end %> 
