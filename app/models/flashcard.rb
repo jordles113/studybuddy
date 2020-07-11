@@ -1,5 +1,5 @@
 class Flashcard < ApplicationRecord
-    belongs_to :deck, dependent: :destroy 
+    belongs_to :deck
     validates :name, presence: true
     validates :definition, presence: true 
 

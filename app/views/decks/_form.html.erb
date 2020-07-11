@@ -17,9 +17,9 @@
 <p class="text-center"><%= form_for(@deck) do |f| %> </p>
 <div class="text-weight-bold text-center text-info"><%= f.label :name %></div>
 <div class="text-weight-bold text-center"><%= f.text_field :name %></div>  
- <div class="text-weight-bold text-center text-info"><%= f.label :public_deck %></div>
-<div class="text-weight-bold text-center"><%= f.check_box :public_deck%></div> 
-<div class="text-weight-bold text-center"><%= f.submit value="Submit", class: 'btn btn-outline-info' %> </div>   
+ <div class="text-weight-bold text-center text-info form-check"><%= f.label :public_deck, class: 'form-check-label' %>
+ <%= f.check_box :public_deck, class: 'form-check-input ml-4'%></div> 
+<div class="text-weight-bold text-center"><%= f.submit value="Submit", class: 'btn btn-outline-info mt-5' %> </div>   
 
 
 
