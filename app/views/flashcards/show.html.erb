@@ -1,12 +1,8 @@
 <h1 class="display-4 text-capitalize text-center bg-info text-white pt-3 border border-primary"><%= @flashcard.name %> </h1><br>    
+<div class="d-flex justify-content-center">
 
-<p class="text-monospace text-center font-weight-bold"> <%= @flashcard.definition %></p>
-
-<h4 class="text-monospace text-center font-weight-bold text-capitalize">Deck: <%= link_to @flashcard.deck.name, deck_path(@flashcard.deck) if @flashcard.deck %></h4>
-<div class="text-weight-bold text-center text-primary font-weight-bold pt-3"> <%= link_to "Update Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-outline-info" %></div><br>
-<div class="row justify-content-center"><%= button_to 'Delete Flashcard', @flashcard, method: :delete, class: "btn btn-outline-danger"%></div>   
-
-
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 <div class= "card justify-content-center"> 
   
     <div class= "card-body" style= "width :20em;">
@@ -17,5 +13,6 @@
         <div class="card-footer"> 
         <div class="row justify-content-center"><%= button_to 'Delete Flashcard', @flashcard, method: :delete, class: "btn btn-outline-danger"%></div>   
         </div>
-    </>
+
+</div>
 </div>

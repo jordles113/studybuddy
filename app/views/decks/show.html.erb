@@ -1,13 +1,21 @@
 <h1 class="display-4 text-capitalize text-center bg-info text-white pt-3 border border-primary"><%= @deck.name %> </h1>
 <h3 class="text-capitalize text-center text-info"> Public Deck: <%= @deck.public_deck %> </h3>
 
-
+<div class="d-flex justify-content-center flex-wrap row-hl">
 <% @deck.flashcards.all.sort {|a, b| a.name <=> b.name}.each do |f|%>
-<li class= "list-unstyled text-capitalize text-center pb-1" > <%= link_to f.name, flashcard_path(f), class: 'text-info' %></li>
-<% end %>
+<div class="card mb-4 border-dark mr-4" style="width: 25rem;" style="display:flex"> 
+     <p class="card-header text-center bg-light"><%=link_to f.name, flashcard_path(f), class: 'text-dark' %></p>
+     <div class= "card-body text-center">
+          <p class="lead"><%= f.definition %> </p>
+    </div>
+    
+</div>
 
+<% end %> 
+</div>
 <div class="text-weight-bold text-center text-primary font-weight-bold pt-3"> <%= link_to "Update Deck", edit_deck_path(@deck), class: "btn btn-outline-info" %></div><br>
 <div class="row justify-content-center"><%= button_to 'Delete Deck', @deck, method: :delete, class: "btn btn-outline-danger"%></div> 
+</div>
 
 
 

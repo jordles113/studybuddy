@@ -2,12 +2,18 @@
 
 
 
-  
+<div class="d-flex justify-content-center flex-wrap row-hl">
 
-<ul><% @flashcards.all.sort {|a, b| a.name <=> b.name}.each do |f| %> </ul>
-<li class= "list-unstyled text-capitalize text-center pb-1" > <%=link_to f.name, flashcard_path(f), class: 'text-info' %></li>
+<% @flashcards.all.sort {|a, b| a.name <=> b.name}.each do |f| %> 
+<div class="card mb-4 border-dark mr-4" style="width: 25rem;" style="display:flex"> 
+     <p class="card-header text-center bg-dark"><%=link_to f.name, flashcard_path(f), class: 'text-info' %></p>
+     <div class= "card-body text-center">
+          <p class="lead"><%= f.definition %> </p>
+    </div>
+    
+</div>
 
 <% end %> 
-
+</div>
 
 
