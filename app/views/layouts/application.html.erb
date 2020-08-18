@@ -46,8 +46,12 @@
                     <%= text_field_tag 'search', nil, placeholder: 'Search Flashcards' %>
                     <%= submit_tag ("Search"), class: 'btn btn-outline-info ml-3' %>
                     </div>
+                  
                   <% end %>
               </div>
+              <div>
+                  <%= button_to "Log Out",  destroy_user_session_path, method: :delete %>
+              <div>
           </div>
         </div>
     </nav>

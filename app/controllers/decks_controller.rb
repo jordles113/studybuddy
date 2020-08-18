@@ -1,4 +1,7 @@
 class DecksController < ApplicationController
+    helper_method :user_session 
+    helper_method :current_user 
+    before_action :authenticate_user!
     before_action :set_decks, only: [:show, :edit, :update, :destroy]
     
     def index
@@ -15,8 +18,7 @@ class DecksController < ApplicationController
     
     def create
         @deck = Deck.new(deck_params)
-        if @deck.valid? 
-            @deck.save 
+        if @deck.save 
             redirect_to deck_path(@deck)
         else  
             render :new
@@ -50,7 +52,7 @@ class DecksController < ApplicationController
     end
 
     def deck_params
-        params.require(:deck).permit(:name, :public_deck)
+        params.require(:deck).permit(:name, :description, :public_deck, :user_id)
     end 
 end
 
