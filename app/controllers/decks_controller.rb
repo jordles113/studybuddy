@@ -3,21 +3,22 @@ class DecksController < ApplicationController
     helper_method :current_user 
     before_action :authenticate_user!
     before_action :set_decks, only: [:show, :edit, :update, :destroy]
+    load_and_authorize_resource
     
     def index
-        @decks = Deck.all
         
     end 
     
     def show
-    end
+        
+    end 
 
     def new
-        @deck = Deck.new
+        @deck = current_user.decks.new
     end
     
     def create
-        @deck = Deck.new(deck_params)
+        @deck = current_user.decks.new(deck_params)
         if @deck.save 
             redirect_to deck_path(@deck)
         else  
@@ -25,11 +26,12 @@ class DecksController < ApplicationController
         end 
     end
 
-    def edit
+    def edit3
     end 
 
     def update
         @deck.update(deck_params)
+        #authorize! :update, @deck
         if @deck.valid? 
             @deck.save
             redirect_to deck_path(@deck)

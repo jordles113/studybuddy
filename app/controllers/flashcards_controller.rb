@@ -2,11 +2,16 @@ class FlashcardsController < ApplicationController
     helper_method :user_session 
     helper_method :current_user 
     before_action :authenticate_user!, except: [:index, :show]
-    
     before_action :set_flashcard, only: [:show, :edit, :update, :destroy]
+    load_and_authorize_resource
 
     def index
+        @search = params[:search]
+        if @search 
         @flashcards = Flashcard.search(params[:search])
+        else
+            
+        end 
     end 
 
 

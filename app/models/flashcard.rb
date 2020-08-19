@@ -8,5 +8,10 @@ class Flashcard < ApplicationRecord
         where("name LIKE ?", "%#{search}%")
     end 
 
+    #def self.public_card
+        #need to set flashcards to public when added to public deck and flash are you sure message 
+        #need to add a public boolean to flashcards and default to false 
+        #need to change to public with addition to public deck 
+    #end 
     
 end

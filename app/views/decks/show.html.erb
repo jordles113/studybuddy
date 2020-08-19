@@ -8,13 +8,21 @@
      <div class= "card-body text-center">
           <p class="lead"><%= f.definition %> </p>
     </div>
-    
-</div>
+    <div class = 'card-footer text-muted'>
+     <p> <%= @deck.user.username %> </p>
 
-<% end %> 
+    </div>
 </div>
+<% end %> 
+
+
+</div>
+<% if can? :update, @deck %>
 <div class="text-weight-bold text-center text-primary font-weight-bold pt-3"> <%= link_to "Update Deck", edit_deck_path(@deck), class: "btn btn-outline-info" %></div><br>
+<% end %>
+<% if can? :delete, @deck %>
 <div class="row justify-content-center"><%= button_to 'Delete Deck', @deck, method: :delete, class: "btn btn-outline-danger"%></div> 
+<% end %>
 </div>
 
 
