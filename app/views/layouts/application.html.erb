@@ -14,6 +14,7 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
   <nav class="navbar navbar-expand-sm nav-fill navbar-light bg-light">
         <div class="container "> 
             <a class="navbar-brand" href="#">StudyBuddy</a>
@@ -55,6 +56,27 @@
           </div>
         </div>
     </nav>
+      <% else %>
+      <nav class="navbar navbar-expand-sm nav-fill navbar-light bg-light">
+        <div class="container "> 
+            <a class="navbar-brand" href="#">StudyBuddy</a>
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarnav">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarnav">
+              <ul class="navbar-nav nav-fill">
+                  <li class="nav-item">
+                    <%= link_to "Sign Up", new_user_registration_path %>
+                  </li>
+                  <li class="nav-link">
+                    <%= link_to "Login", new_user_session_path%>
+                  </li> 
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <% end %>
+    
     <%= yield %>
   </body>
   

@@ -1,5 +1,6 @@
-<h2>Sign up</h2>
+<h2 class="pt-3 display-4 text-center bg-info text-light">Sign up</h2>
 
+<div class="row justify-content-center">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -30,5 +31,6 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<div class="text-center text-dark"><%= render "devise/shared/links" %></div>
